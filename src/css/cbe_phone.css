@@ -1,0 +1,310 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cbe{
+    width: 60px;
+    height: 60px;
+    background-color: #353535;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .cbe_st0{
+    fill:none;
+    stroke:#FFFFFF;
+    stroke-width: 1.8;
+    stroke-miterlimit:10;
+  
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    -webkit-animation: cbe_dash 4s cubic-bezier(.6,.04,.98,.34) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_dash 4s cubic-bezier(.6,.04,.98,.34) infinite;
+  }
+  
+  .cbe_st1{
+    fill: #FFFFFF;
+    -ms-transform: translateX(-0.025rem); /* IE 9 */
+    -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+    transform: translateX(-0.025rem);
+  
+    -webkit-animation: cbe_translate 0.05s cubic-bezier(.6,-0.28,.74,.05) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_translate 0.05s cubic-bezier(.6,-0.28,.74,.05) infinite;
+  }
+  
+  .cbe_st1_01{
+    fill: #FFFFFF;
+    -ms-transform: translateX(-0.025rem); /* IE 9 */
+    -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+    transform: translateX(-0.025rem);
+  
+    -webkit-animation: cbe_translate 0.05s cubic-bezier(.6,-0.28,.74,.05) infinite reverse; /* Safari 4.0 - 8.0 */
+    animation: cbe_translate 0.05s cubic-bezier(.6,-0.28,.74,.05) infinite reverse;
+    opacity: 0.6;
+  }
+  
+  .cicle_trans_06{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) infinite;
+  }
+  
+  .cicle_trans_05{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .1s infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .1s infinite;
+  }
+  
+  .cicle_trans_04{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .2s infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .2s infinite;
+  }
+  
+  .cicle_trans_03{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .3s infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .3s infinite;
+  }
+  
+  .cicle_trans_02{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .4s infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .4s infinite;
+  }
+  
+  .cicle_trans_01{
+    transform-origin: 50% 50%;
+    -ms-transform: scale(0); /* IE 9 */
+    -webkit-transform: scale(0); /* Safari 3-8 */
+    transform: scale(0);
+  
+    -webkit-animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .5s infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_scale 4s cubic-bezier(.18,.89,.32,1.28) .5s infinite;
+  }
+  
+  .cbe_triangulo{
+    transform-origin: 50% 50%;
+    -ms-transform: rotate(-180deg); /* IE 9 */
+    -webkit-transform: rotate(-180deg); /* Safari 3-8 */
+    transform: rotate(-180deg);
+  
+    -webkit-animation: cbe_rotate 4s cubic-bezier(.17,.84,.44,1) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_rotate 4s cubic-bezier(.17,.84,.44,1) infinite;
+  }
+  
+  .cbe_opacidad_triangulo{
+    opacity: 0;
+  
+    -webkit-animation: cbe_opacidad_tringulo 4s cubic-bezier(.17,.84,.44,1) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_opacidad_tringulo 4s cubic-bezier(.17,.84,.44,1) infinite;
+  }
+  
+  .cbe_telefonos{
+    opacity: 0;
+  
+    -webkit-animation: cbe_opacidad_tringulo 4s cubic-bezier(.17,.84,.44,1) infinite; /* Safari 4.0 - 8.0 */
+    animation: cbe_opacidad_tringulo 4s cubic-bezier(.17,.84,.44,1) infinite;
+  }
+  
+  /* Escala circulos
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes cbe_scale {
+    0%, 100%   {
+      -ms-transform: scale(0); /* IE 9 */
+      -webkit-transform: scale(0); /* Safari 3-8 */
+      transform: scale(0);
+    }
+  
+    20%, 80% {
+      -ms-transform: scale(1); /* IE 9 */
+      -webkit-transform: scale(1); /* Safari 3-8 */
+      transform: scale(1);
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes cbe_scale {
+    0%, 100%   {
+      -ms-transform: scale(0); /* IE 9 */
+      -webkit-transform: scale(0); /* Safari 3-8 */
+      transform: scale(0);
+    }
+  
+    20%, 80% {
+      -ms-transform: scale(1); /* IE 9 */
+      -webkit-transform: scale(1); /* Safari 3-8 */
+      transform: scale(1);
+    }
+  }
+  
+  /* Recorrido de trazo de flecha
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes cbe_dash {
+    0%, 20%   {
+      stroke-dashoffset: 100;
+    }
+  
+    40%, 80% {
+      stroke-dashoffset: 0;
+    }
+  
+    100% {
+      stroke-dashoffset: -100;
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes cbe_dash {
+    0%, 20%   {
+      stroke-dashoffset: 100;
+    }
+  
+    40%, 80% {
+      stroke-dashoffset: 0;
+    }
+  
+    100% {
+      stroke-dashoffset: -100;
+    }
+  }
+  
+  /* Rotacion triangulo
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes cbe_rotate {
+    0%, 30% {
+      -ms-transform: rotate(-180deg); /* IE 9 */
+      -webkit-transform: rotate(-180deg); /* Safari 3-8 */
+      transform: rotate(-180deg);
+    }
+  
+    50%, 80% {
+      -ms-transform: rotate(0deg); /* IE 9 */
+      -webkit-transform: rotate(0deg); /* Safari 3-8 */
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Safari 3-8 */
+      transform: rotate(180deg);
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes cbe_rotate {
+    0%, 30% {
+      -ms-transform: rotate(-180deg); /* IE 9 */
+      -webkit-transform: rotate(-180deg); /* Safari 3-8 */
+      transform: rotate(-180deg);
+    }
+  
+    50%, 80% {
+      -ms-transform: rotate(0deg); /* IE 9 */
+      -webkit-transform: rotate(0deg); /* Safari 3-8 */
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Safari 3-8 */
+      transform: rotate(180deg);
+    }
+  }
+  
+  /* opacidad triangulo
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes cbe_opacidad_tringulo {
+    0%, 30% {
+      opacity: 0;
+    }
+  
+    50%, 80% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes cbe_opacidad_tringulo {
+    0%, 30% {
+      opacity: 0;
+    }
+  
+    50%, 80% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Movimiento telefono vibracion
+  /* Safari 4.0 - 8.0 */
+  @-webkit-keyframes cbe_translate {
+    0% {
+      -ms-transform: translateX(-0.025rem); /* IE 9 */
+      -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+      transform: translateX(-0.025rem);
+    }
+  
+    50% {
+      -ms-transform: translateX(0.025rem); /* IE 9 */
+      -webkit-transform: translateX(0.025rem); /* Safari 3-8 */
+      transform: translateX(0.025rem);
+    }
+  
+    100% {
+      -ms-transform: translateX(-0.025rem); /* IE 9 */
+      -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+      transform: translateX(-0.025rem);
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes cbe_translate {
+    0% {
+      -ms-transform: translateX(-0.025rem); /* IE 9 */
+      -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+      transform: translateX(-0.025rem);
+    }
+  
+    50% {
+      -ms-transform: translateX(0.025rem); /* IE 9 */
+      -webkit-transform: translateX(0.025rem); /* Safari 3-8 */
+      transform: translateX(0.025rem);
+    }
+  
+    100% {
+      -ms-transform: translateX(-0.025rem); /* IE 9 */
+      -webkit-transform: translateX(-0.025rem); /* Safari 3-8 */
+      transform: translateX(-0.025rem);
+    }
+  }
+  

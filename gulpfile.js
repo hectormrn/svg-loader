@@ -2,55 +2,35 @@
  * @author hector.mrn55@gmail.com
  * @description Autoloader svg files...
  */
-var gulp = require('gulp'),
-    fs = require('fs'),
-    jsonModify = require('gulp-json-modify');
+const   gulp    = require('gulp'),
+        fs      = require('fs'),
+        path    = require('path'),
+        through = require('through2'),
+        sanitize = require("sanitize-filename"),
+        REL_PATH_SVG_FILES = './images/svg/',
+        ROOT_PATH_SVG_FILES = './src/images/svg',
+        FILE_EXTENSION = '.svg',
+        TARGET_JS_FILE = './src/tree.js';
+let     exportPaths  = ""; 
 
-const svgFolderPath = './src/images/svg/',
-        jsonSvgMap = './src/svgmap.json',
-        svgData = {}; 
-        let exportPaths = "";
+gulp.task('scannDir', function () {
+    const streamFilesPath = path.join(ROOT_PATH_SVG_FILES + '/**/*.svg') 
+    return gulp.src(streamFilesPath)
+        .pipe(through.obj(function (file, enc, cb) {
+            let iconName = file.relative.substr(file.relative.lastIndexOf('/') + 1);
+            iconName = sanitize(iconName.replace(FILE_EXTENSION, ''))
+            exportPaths += `export const ${iconName} = require('${REL_PATH_SVG_FILES}${file.relative}'); \n`
+            cb(null);
+        }))
+});
 
-/**
-* Read all svg files
-*/
-gulp.task('read-files', function(done){
-    fs.readdirSync(svgFolderPath).map(function (file, i, content) {
-        fs.readFile(svgFolderPath + file, "utf8", function(err, data){
-            if (err) throw err;
-            let keyName = file.split(".")[0];
-            svgData[keyName] = data;
-            if (i === content.length-1) done()
-        })
-    })
-})
-
-gulp.task('list', function(done){
-    return fs.readdirSync(svgFolderPath).map(function (file, i, content) {
-        fs.readFile(svgFolderPath + file, "utf8", function(err, data){
-            if (err) throw err;
-            let keyName = file.split(".")[0];
-            exportPaths += `export const ${keyName} = require('path/to/${keyName}.svg'); \n`
-            svgData[keyName] = data;
-            if (i === content.length-1) done()
-        })
-    })
-})
-
-gulp.task('create-map', ['list'], function () {
-    /*return gulp.src([jsonSvgMap])
-        .pipe(jsonModify({ key: 'svg', value: svgData }))
-        .pipe(gulp.dest('./src/'))*/
-    fs.writeFile('./tree.js', exportPaths, function(err){
-        if (err){
-            console.log("ocurrio un error");
-            throw err
-        }
-        console.log(exportPaths)
+gulp.task('export-map', ['scannDir'], function () {
+    fs.writeFile(TARGET_JS_FILE, exportPaths, function(err){
+        if (err) throw err;
     })
 });
 
 /*
 * Task default from gulp
 */
-gulp.task('default',['create-map'], function (done) {});
+gulp.task('default',['export-map'], function (done) {});

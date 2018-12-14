@@ -25,6 +25,7 @@
   ],
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-json-modify": "^1.0.2"
+    "gulp-json-modify": "^1.0.2",
+    "sanitize-filename": "^1.6.1"
   }
 }
